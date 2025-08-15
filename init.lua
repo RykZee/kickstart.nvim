@@ -698,7 +698,14 @@ require('lazy').setup({
       local servers = {
         -- clangd = {},
         -- gopls = {},
-        pyright = {},
+        pyright = {
+          settings = {
+            python = {
+              venvPath = '.',
+              venv = '.venv',
+            },
+          },
+        },
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         -- ruby_lsp = {},
