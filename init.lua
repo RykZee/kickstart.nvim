@@ -65,6 +65,12 @@ vim.keymap.set('n', '<leader>e', ':Neotree toggle reveal<CR>', { desc = 'Toggle 
 vim.keymap.set('v', '<leader>y', '"+y', { desc = 'Copy to clipboard' })
 vim.keymap.set('v', '<leader>p', '"+p', { desc = 'Paste to clipboard' })
 
+-- keymaps for new tabs
+vim.keymap.set('n', '<leader>to', ':tabnew<CR>', { desc = 'Open a new tab' })
+vim.keymap.set('n', '<leader>tx', ':tabclose<CR>', { desc = 'Close current tab' })
+vim.keymap.set('n', '<leader>tn', ':tabnext<CR>', { desc = 'Next tab' })
+vim.keymap.set('n', '<leader>tp', ':tabprevious<CR>', { desc = 'Previous tab' })
+
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
@@ -662,6 +668,9 @@ require('lazy').setup({
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
         -- javascript = { "prettierd", "prettier", stop_after_first = true },
+        xml = { 'xmllint', 'xmlstarlet' },
+        xsd = { 'xmllint', 'xmlstarlet' },
+        xslt = { 'xmllint', 'xmlstarlet' },
       },
     },
   },
