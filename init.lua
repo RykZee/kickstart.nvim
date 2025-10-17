@@ -214,8 +214,8 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
       vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
-      vim.keymap.set('n', '<leader>sw', "<CMD>lua require('telescope').extensions.git_worktree.git_worktrees()<CR>", { desc = 'worktrees' })
-      vim.keymap.set('n', '<leader>sW', "<CMD>lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>", { desc = 'worktrees' })
+      vim.keymap.set('n', '<leader>sw', "<CMD>lua require('telescope').extensions.git_worktree.git_worktrees()<CR>", { desc = '[S]earch [w]orktrees' })
+      vim.keymap.set('n', '<leader>sW', "<CMD>lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>", { desc = 'Create new [W]worktree' })
 
       -- NOTE: Sebastian continues here
       -- Slightly advanced example of overriding default behavior and theme
