@@ -215,13 +215,14 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
       vim.keymap.set('n', '<leader>sl', builtin.lsp_document_symbols, { desc = '[S]earch functions and variables' })
-      vim.keymap.set('n', '<leader>sw', "<CMD>lua require('telescope').extensions.git_worktree.git_worktrees()<CR>", { desc = '[S]earch [w]orktrees' })
+      vim.keymap.set('n', '<leader>sw', "<CMD>lua require('telescope').extensions.git_worktree.git_worktrees()<CR>", { desc = '[S]earch [W]orktrees' })
       vim.keymap.set(
         'n',
         '<leader>sW',
         "<CMD>lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>",
         { desc = '[ ] Create new [W]worktree' }
       )
+      vim.keymap.set('n', '<leader>rn', [[:%s/\\n/\r/g<CR>]], { silent = true, desc = '[R]eplace \\n with [N]ewline' })
 
       -- NOTE: Sebastian continues here
       -- Slightly advanced example of overriding default behavior and theme
