@@ -846,6 +846,9 @@ require('lazy').setup({
       lazy = '💤 ',
     },
   },
+  change_detection = {
+    notify_on_error = false,
+  },
 })
 
 -- The line beneath this is called `modeline`. See `:help modeline`
