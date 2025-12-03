@@ -63,6 +63,7 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- My personal set keymaps
 vim.keymap.set('n', '<leader>e', ':Neotree toggle reveal<CR>', { desc = 'Toggle Neo-tree' })
+vim.keymap.set('n', '<leader>a', ':Alpha<CR>', { desc = 'Show Alpha dashboard' })
 vim.keymap.set('v', '<leader>y', '"+y', { desc = 'Copy to clipboard' })
 vim.keymap.set('v', '<leader>p', '"+p', { desc = 'Paste to clipboard' })
 
@@ -567,7 +568,7 @@ require('lazy').setup({
       formatters_by_ft = {
         lua = { 'stylua' },
         -- Conform can also run multiple formatters sequentially
-        python = { 'ruff' },
+        python = { 'ruff_fix', 'ruff_format', 'ruff_organize_imports' },
         json = { 'prettierd', 'prettier', 'jq' },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
