@@ -226,16 +226,17 @@ require('lazy').setup({
       )
       vim.keymap.set('n', '<leader>rn', [[:%s/\\n/\r/g<CR>]], { silent = true, desc = '[R]eplace \\n with [N]ewline' })
 
-      -- NOTE: Sebastian continues here
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set('n', '<leader>/', function()
         -- You can pass additional configuration to Telescope to change the theme, layout, etc.
         builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-          winblend = 10,
-          previewer = false,
+          winblend = 0,
+          previewer = true,
+          skip_empty_lines = true,
         })
       end, { desc = '[/] Fuzzily search in current buffer' })
 
+      -- NOTE: Sebastian continues here
       -- It's also possible to pass additional configuration options.
       --  See `:help telescope.builtin.live_grep()` for information about particular keys
       vim.keymap.set('n', '<leader>s/', function()
