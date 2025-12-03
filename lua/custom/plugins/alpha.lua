@@ -28,8 +28,8 @@ return {
     startify.section.mru.val = {}
     -- startify.section.mru_cwd.val = {}
 
-    startify.config.layout[1].val = vim.fn.max { 2, vim.fn.floor(vim.fn.winheight(0) * 0.3) }
-    startify.config.opts.margin = vim.fn.max { 2, vim.fn.floor(vim.fn.winwidth(0) * 0.3) }
+    startify.config.layout[1].val = vim.fn.max { 2, vim.fn.floor(vim.fn.winheight(0) * 0.2) }
+    startify.config.opts.margin = vim.fn.max { 2, vim.fn.floor(vim.fn.winwidth(0) * 0.35) }
 
     alpha.setup(startify.config)
   end,
