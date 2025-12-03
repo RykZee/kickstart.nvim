@@ -17,11 +17,12 @@ return {
     }
 
     startify.section.top_buttons.val = {
-      startify.button('e', '  New File', ':ene <BAR> startinsert <CR>'),
-      startify.button('f', '  Find File', ':Telescope find_files<CR>'),
-      startify.button('r', '  > Recent', ':Telescope oldfiles<CR>'),
-      startify.button('t', '  Find Text', ':Telescope live_grep<CR>'),
-      startify.button('q', '  Quit', ':qa<CR>'),
+      startify.button('w', '󰁯  Workspace', '<cmd>AutoSession restore<CR>'),
+      startify.button('e', '  New File', '<cmd>ene <BAR> startinsert <CR>'),
+      startify.button('f', '󰱼  Find File', '<cmd>Telescope find_files<CR>'),
+      startify.button('t', '󱎸  Find Text', '<cmd>Telescope live_grep<CR>'),
+      startify.button('r', '  Recent', '<cmd>Telescope oldfiles<CR>'),
+      startify.button('q', '  Quit', '<cmd>qa<CR>'),
     }
 
     startify.section.bottom_buttons = {}
