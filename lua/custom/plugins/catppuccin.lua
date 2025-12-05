@@ -37,7 +37,6 @@ return {
 
         -- put compiled cache in a path we just ensured exists
         compile_path = compile_dir,
-        -- (auto_integrations = true) -- optionally let it detect installed plugins
       }
 
       -- precompile once to avoid "could not load cache"
@@ -45,8 +44,7 @@ return {
         require('catppuccin').compile()
       end)
 
-      vim.opt.termguicolors = true
-      vim.cmd.colorscheme 'catppuccin'
+      -- vim.cmd.colorscheme 'catppuccin'
     end,
   },
 }

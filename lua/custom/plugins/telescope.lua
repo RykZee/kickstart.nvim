@@ -41,6 +41,7 @@ return {
     vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
     vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
     vim.keymap.set('n', '<leader>sl', builtin.lsp_document_symbols, { desc = '[S]earch functions and variables' })
+    vim.keymap.set('n', '<leader>sv', '<cmd>:Telescope colorscheme<CR>', { desc = '[S]earch themes' })
     vim.keymap.set('n', '<leader>st', '<cmd>TodoTelescope<CR>', { desc = '[S]earch Todos' })
     vim.keymap.set('n', '<leader>sw', "<cmd>lua require('telescope').extensions.git_worktree.git_worktrees()<CR>", { desc = '[S]earch [W]orktrees' })
     vim.keymap.set(
