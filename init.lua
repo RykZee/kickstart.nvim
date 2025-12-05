@@ -1,12 +1,10 @@
--- Set <space> as the leader key
+-- Initial settings
+vim.o.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions'
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
-
--- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
 
-vim.o.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions'
-
+-- Basic settings
 vim.opt.expandtab = true
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -14,20 +12,21 @@ vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.mouse = 'a'
 vim.opt.showmode = false
+vim.opt.wrap = false
+vim.opt.scrolloff = 15
+vim.opt.sidescrolloff = 10
+vim.opt.cursorline = true
+vim.opt.breakindent = true
+vim.opt.undofile = true
 
 -- Sync clipboard between OS and Neovim.
 vim.schedule(function()
   vim.opt.clipboard = 'unnamedplus'
 end)
 
-vim.opt.breakindent = true
-vim.opt.undofile = true
-
--- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
+-- Search settings
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
-
-vim.opt.signcolumn = 'yes'
 
 -- will write to disk if nothing is typed in this many milliseconds
 vim.opt.updatetime = 250
@@ -43,14 +42,13 @@ vim.opt.splitbelow = true
 vim.opt.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
+-- Visual settings
+vim.opt.termguicolors = true
+vim.opt.signcolumn = 'yes'
+vim.opt.showmatch = true
+
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = 'split'
-
--- Show which line your cursor is on
-vim.opt.cursorline = true
-
--- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 15
 
 -- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
 -- instead raise a dialog asking if you wish to save the current file(s)
@@ -105,14 +103,8 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
--- [[ Configure and install plugins ]]
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
-  -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
-  -- NOTE: Plugins can also be added by using a table,
-  -- with the first argument being the link and the following
-  -- keys can be used to configure plugin behavior/loading/etc.
-
   { -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
     opts = {
