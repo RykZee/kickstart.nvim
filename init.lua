@@ -412,6 +412,11 @@ require('lazy').setup({
             },
           },
         },
+        sourcekit = {
+          cmd = { 'xcrun', 'sourcekit-lsp' },
+          filetypes = { 'swift', 'objective-c', 'objective-cpp' },
+          root_dir = require('lspconfig.util').root_pattern('Package.swift', '.git'),
+        },
       }
 
       -- Ensure the servers and tools above are installed
@@ -427,10 +432,19 @@ require('lazy').setup({
       --
       -- You can add other tools here that you want Mason to install
       -- for you, so that they are available from within Neovim.
-      local ensure_installed = vim.tbl_keys(servers or {})
+      local ensure_installed = vim.tbl_filter(function(lsp)
+        return lsp ~= 'sourcekit'
+      end, vim.tbl_keys(servers or {}))
+
+      local _server = servers.sourcekit
+      _server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, _server.capabilities or {})
+      vim.lsp.config('sourcekit', _server)
+      vim.lsp.enable 'sourcekit'
+
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
       })
+
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
       require('mason-lspconfig').setup {
@@ -443,7 +457,8 @@ require('lazy').setup({
             -- by the server configuration above. Useful when disabling
             -- certain features of an LSP (for example, turning off formatting for ts_ls)
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-            require('lspconfig')[server_name].setup(server)
+            vim.lsp.config(server_name, server)
+            vim.lsp.enable(server_name)
           end,
         },
       }
