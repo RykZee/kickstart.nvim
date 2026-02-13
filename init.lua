@@ -378,6 +378,7 @@ require('lazy').setup({
       local servers = {
         -- clangd = {},
         -- gopls = {},
+        astro = {},
         pyright = {
           settings = {
             python = {
