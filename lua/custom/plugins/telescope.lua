@@ -51,15 +51,11 @@ return {
       { desc = '[ ] Create new [W]worktree' }
     )
     vim.keymap.set('n', '<leader>rn', [[:%s/\\n/\r/g<CR>]], { silent = true, desc = '[R]eplace \\n with [N]ewline' })
-
-    -- Slightly advanced example of overriding default behavior and theme
     vim.keymap.set('n', '<leader>/', function()
-      -- You can pass additional configuration to Telescope to change the theme, layout, etc.
-      builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-        winblend = 0,
+      builtin.current_buffer_fuzzy_find {
         previewer = true,
         skip_empty_lines = true,
-      })
+      }
     end, { desc = '[/] Fuzzily search in current buffer' })
 
     -- It's also possible to pass additional configuration options.
