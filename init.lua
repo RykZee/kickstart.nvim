@@ -20,9 +20,7 @@ vim.opt.breakindent = true
 vim.opt.undofile = true
 
 -- Sync clipboard between OS and Neovim.
-vim.schedule(function()
-  vim.opt.clipboard = 'unnamedplus'
-end)
+vim.opt.clipboard = 'unnamedplus'
 
 -- Search settings
 vim.opt.ignorecase = true
@@ -64,8 +62,7 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 -- My personal set keymaps
 vim.keymap.set('n', '<leader>e', ':Neotree toggle reveal<CR>', { desc = 'Toggle Neo-tree' })
 vim.keymap.set('n', '<leader>a', ':Alpha<CR>', { desc = 'Show Alpha dashboard' })
-vim.keymap.set('v', '<leader>y', '"+y', { desc = 'Copy to clipboard' })
-vim.keymap.set('v', '<leader>p', '"+p', { desc = 'Paste to clipboard' })
+vim.keymap.set('x', 'p', '"_dP')
 
 -- keymaps for new tabs
 vim.keymap.set('n', '<leader>to', ':tabnew<CR>', { desc = 'Open a new tab' })
