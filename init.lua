@@ -59,6 +59,10 @@ vim.opt.wildignore = { '*.pyc', '__pycache__', 'node_modules' }
 -- Clear highlights on search when pressing <Esc> in normal mode
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
+-- CTRL + y and CTRL + e scrolls more than just one line
+vim.keymap.set({ 'n', 'v' }, '<C-e>', '5<C-e>', { desc = 'Scroll down more' })
+vim.keymap.set({ 'n', 'v' }, '<C-y>', '5<C-y>', { desc = 'Scroll up more' })
+
 -- My personal set keymaps
 vim.keymap.set('n', '<leader>e', ':Neotree toggle reveal<CR>', { desc = 'Toggle Neo-tree' })
 vim.keymap.set('n', '<leader>a', ':Alpha<CR>', { desc = 'Show Alpha dashboard' })
