@@ -52,6 +52,8 @@ vim.opt.inccommand = 'split'
 -- instead raise a dialog asking if you wish to save the current file(s)
 vim.opt.confirm = true
 
+-- disable legacy python provider
+vim.g.loaded_python3_provider = 0
 -- ignore files to search in
 vim.opt.wildignore = { '*.pyc', '__pycache__', 'node_modules' }
 
