@@ -57,6 +57,12 @@ vim.g.loaded_python3_provider = 0
 -- ignore files to search in
 vim.opt.wildignore = { '*.pyc', '__pycache__', 'node_modules' }
 
+vim.filetype.add {
+  filename = {
+    bash_profile = 'bash',
+    bashrc = 'bash',
+  },
+}
 -- [[ Basic Keymaps ]]
 -- Clear highlights on search when pressing <Esc> in normal mode
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
