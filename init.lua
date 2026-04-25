@@ -73,7 +73,6 @@ vim.keymap.set({ 'n', 'v' }, '<C-y>', '5<C-y>', { desc = 'Scroll up more' })
 
 -- My personal set keymaps
 vim.keymap.set('n', '<leader>e', ':Neotree toggle reveal<CR>', { desc = 'Toggle Neo-tree' })
-vim.keymap.set('n', '<leader>a', ':Alpha<CR>', { desc = 'Show Alpha dashboard' })
 vim.keymap.set('x', 'p', '"_dP')
 
 -- keymaps for new tabs
