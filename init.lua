@@ -18,6 +18,7 @@ vim.opt.sidescrolloff = 10
 vim.opt.cursorline = true
 vim.opt.breakindent = true
 vim.opt.undofile = true
+vim.opt.foldlevelstart = 99
 
 -- Sync clipboard between OS and Neovim.
 vim.opt.clipboard = 'unnamedplus'
@@ -38,7 +39,7 @@ vim.opt.splitbelow = true
 
 -- Sets how neovim will display certain whitespace characters in the editor.
 vim.opt.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.opt.listchars = { space = '·', tab = '» ', trail = '·', nbsp = '␣' }
 
 -- Visual settings
 vim.opt.termguicolors = true
@@ -74,6 +75,7 @@ vim.keymap.set({ 'n', 'v' }, '<C-y>', '5<C-y>', { desc = 'Scroll up more' })
 -- My personal set keymaps
 vim.keymap.set('n', '<leader>e', ':Neotree toggle reveal<CR>', { desc = 'Toggle Neo-tree' })
 vim.keymap.set('x', 'p', '"_dP')
+vim.keymap.set('n', '<leader>nl', ':%s/\\\\n/\\r/g<CR>', { desc = 'Replace literal \\n with actual newlines' })
 
 -- keymaps for new tabs
 vim.keymap.set('n', '<leader>to', ':tabnew<CR>', { desc = 'Open a new tab' })
