@@ -76,6 +76,11 @@ vim.keymap.set({ 'n', 'v' }, '<C-y>', '5<C-y>', { desc = 'Scroll up more' })
 vim.keymap.set('n', '<leader>e', ':Neotree toggle reveal<CR>', { desc = 'Toggle Neo-tree' })
 vim.keymap.set('x', 'p', '"_dP')
 vim.keymap.set('n', '<leader>nl', ':%s/\\\\n/\\r/g<CR>', { desc = 'Replace literal \\n with actual newlines' })
+vim.keymap.set('n', '<leader>cp', function()
+  local path = vim.api.nvim_buf_get_name(0)
+  vim.fn.setreg('+', path)
+  print("Copied path: " .. path)
+end, { desc = "Copy absolute path to clipboard" })
 
 -- keymaps for new tabs
 vim.keymap.set('n', '<leader>to', ':tabnew<CR>', { desc = 'Open a new tab' })
